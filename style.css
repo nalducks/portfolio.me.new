@@ -1,0 +1,882 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw; /* Ganti 100mv jadi 100vw */
+    margin: 0;
+    padding: 0;   /* Hapus 'auto'; tidak diperlukan */
+    background-color: #D8CFC4;
+}
+
+/*------------ Loader Container --------------*/
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: 9999; /* Agar loader di atas semua konten */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*------------- Spinner Animation -----------*/
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #d3d3d3;
+    border-top: 5px solid #4a4a4a;
+    border-radius: 50%;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*---------- navbar ----------*/
+.navbar {
+    align-items: center;
+    justify-content: space-between;
+    background-color: #D8CFC4;
+    display: flex;
+    height: 8vh;
+    z-index: 999; 
+    position: fixed;
+    top: 0;           /* Pastikan menempel di atas */
+    width: 100%;
+    border-bottom: 1px solid #b5b5b5;
+}
+
+/*--------- navbar left ----------*/
+.name {
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: -5rem;
+    padding: 0 0 0 15%;
+    font-size: 2.5rem;
+    color: #4A4A4A;
+    font-weight: 800;
+    font-family: 'Raleway', sans-serif;
+}
+
+.name img {
+    margin-bottom: -3px;
+    width: 33px;
+    height: 33px;
+}
+
+/*----------- navbar right ------------*/
+.menu {
+    list-style: none;
+}
+
+.menu li {
+    display: inline;
+    padding: 0 1rem 0 1rem;
+}
+
+.menu li:last-child {
+    padding-right: 15rem;
+}
+
+.menu li a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #4A4A4A;
+    font-family: 'Raleway', sans-serif;
+    transition: 0.3s;
+    border-radius: 2rem;
+    padding: .5rem;
+    background-color: #e0d7cc;
+}
+
+/*------------ Style the dropdown -------------*/
+.btnBar {
+    cursor: pointer;
+    color: #4A4A4A;
+    padding: 1rem;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+/*---------- SIDEBAR -----------*/
+.sidebar {
+    z-index: 1; 
+    position: fixed;
+    background-color: #D8CFC4;
+    top: 8vh;
+    height: calc(100vh - 8vh); 
+    width: 100%;
+    display: flex;
+    transition: transform 0.5s ease;
+    transform: translateX(-100%);
+    border-top: 1px solid #b5b5b5;
+}
+
+.sidebar.active {
+    transform: translateX(0);
+}
+
+.menuBar {
+    width: 100%;
+    list-style-type: none;
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.menuBar li {
+    margin: 1rem;
+    padding: 10px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    border: 1.5px solid #b5b5b5;
+    background-color: #A3B9D2;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menuBar li:first-child {
+    margin-top: 0rem;
+}
+
+.menuBar li a {
+    font-family: 'Raleway', sans-serif;
+    text-decoration: none;
+    color: #4A4A4A;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/*---------- slide navbar contact -----------*/
+.contactBar {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    border-top: 1px solid #b5b5b5;
+    top: 80%;
+    display: flex;
+}
+
+.contactBar a {
+    height: 5vh;
+    display: flex;
+    margin: 50px 0 0 0;
+}
+
+/*---------------------------------------------------------------- Halaman Utama ------------------------------------------------------------*/
+/* PERBAIKAN: Pastikan setiap section menumpuk ke bawah dengan margin/padding. */
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 2rem;  /* Tambah padding untuk mencegah overlap */
+}
+
+.home {
+    margin-top: 8vh; /* Pastikan konten home di bawah navbar */
+    width: 70%;
+}
+
+.home img {
+    justify-content: center;
+    display: flex;
+    margin: auto;
+    height: 22rem;
+    width: 22rem;
+    border-radius: 100%;
+}
+
+.homeBox {
+    font-weight: bold;
+    text-align: center;
+    justify-content: center;
+    color: #4A4A4A;
+    font-family: 'Raleway', sans-serif;
+}
+
+.homeBox p:nth-child(1) {
+    margin-top: 2rem;
+    font-size: 3rem;
+}
+
+.homeBox p:nth-child(2) {
+    margin-top: -2.2rem;
+    font-size: 2rem;
+}
+
+.homeBox a {
+    width: 10px;
+    height: auto;
+    text-decoration: none;
+    border-radius: 3rem;
+    padding: 0.8rem;
+    margin: 3rem;
+    font-size: 1rem;
+    border: 1.5px solid #b5b5b5;
+    background-color: #A3B9D2;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #4A4A4A;
+    transition: 0.3s;
+}
+
+.homeBox a:hover {
+    color: #003366;
+    transition: 0.3s;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    background-color: #8A9BBE;
+    transform: scale(1.1);
+}
+
+/*------------- about ------------*/
+.container-about {
+    width: 70%;
+    display: flex;
+    margin-top: 1rem;
+}
+
+.about {
+    width: 23rem;
+    /* PERBAIKAN: hindari height: 100vh yang memaksa */
+    min-height: 100vh; /* atau bisa height: auto; jika tidak ingin setinggi layar */
+    padding: 20px;
+}
+.about h1 {
+    font-family: 'Raleway', sans-serif;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4A4A4A;
+}
+.about p {
+    font-size: 1rem;
+    color: #4A4A4A;
+    font-family: 'poppins', sans-serif;
+}
+
+/*----------- right column -----------*/
+.right-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column; 
+    max-height: 100%; /* Hindari 100vh; biarkan konten mengalir */
+}
+.right-column h2 {
+    font-family: 'Raleway', sans-serif;
+    color: #333;
+    margin: 10px 0 0 15px;
+}
+
+.right-column ul {
+    margin-top: 10px;
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+}
+
+.right-column ul li {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    background-color: #8A9BBE;
+    margin: 0 0 0 15px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 10px;
+    align-items: center;
+    color:#4a4a4a;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.right-column ul li:hover {
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.right-column ul li img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+/*------------- all control menu about right -------------*/
+.skills, .leanguage, .software, .certificate, .education {
+    background-color: #e0d7cc;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin: 0 20px 10px 20px;
+}
+
+/*-------------- skill -------------*/
+.skills.special-margin {
+    margin-top: 3rem;
+}
+
+/*------- certificate --------*/
+.certificate.certificateBox a {
+    text-decoration: none;
+    color: #4A4A4A;
+}
+.certificate.certificateBox a:hover {
+    text-decoration: underline;
+}
+
+/*------------ education -------------*/
+.education.educationBox ul {
+    display: inline;
+} 
+.education.educationBox li {
+    font-family: 'Raleway', sans-serif;
+    font-size: .8rem;
+    color: #4A4A4A;
+    margin: 10px 15px 15px 15px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+.education.educationBox li:hover {
+    transform: scale(1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+.education.educationBox li img {
+    padding-right: 5px;
+}
+.education.educationBox ul li p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 11px;
+    color: #555;
+    margin: 0 15px 0 1.6rem;
+}
+.education.educationBox ul li p:nth-child(3),
+.education.educationBox ul li p:nth-child(5) {
+    padding-left: 3rem;
+}
+
+/*-------------------- Container for grid layout ---------------------*/
+.experience {
+    font-family: 'poppins', sans-serif;
+    width: 70%;
+    margin: 2rem auto; /* PERBAIKAN: auto untuk center, + jarak antar section */
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+.experience h1 {
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4A4A4A;
+}
+.experience-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 69vw;
+    margin: 2rem auto; /* Rapatkan ke tengah */
+}
+
+/*--------------- Card style ----------------*/
+.experience-card {
+    background-color: #A3B9D2;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    background-color: #8A9BBE;
+}
+
+.experience-card h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+    color: #4A4A4A;
+    margin-bottom: 10px;
+}
+
+.experience-card p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    color: #4A4A4A;
+    margin-bottom: 10px;
+}
+
+.experience-card ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.experience-card ul li {
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.experience-card img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+/*********** project ***********/
+.projec {
+    margin-top: 2rem;
+    width: 70%;
+    color: #4A4A4A;
+    font-family: 'poppins', sans-serif;
+}
+
+.projects {
+    width: 60%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+}
+
+.project {
+    background: grey;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #333;
+    padding-bottom: 1rem;
+}
+
+.project img {
+    height: 30vh;
+    width: 100%;
+    border-radius: 1rem 1rem 0 0;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.project img:hover {
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.project h3 {
+    margin: 0;
+    padding-left: 1rem;
+}
+
+.project a {
+    color: #333;
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.project a:nth-child(3) {
+    margin: 1rem;
+    font-size: 1rem;
+}
+
+.project a:last-child:hover {
+    color: #dadada;
+    transition: 0.3s;
+}
+
+/*-------------------- Footer ----------------------*/
+.footer {
+    margin-top: 2rem;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer h1 {
+    font-family: 'poppins', sans-serif;
+    font-size: 2rem;
+    color: #4a4a4a;
+    margin-top: 5rem;
+    padding-top: 3rem;
+    text-align: center;
+}
+
+/*------------- control grid --------------*/
+.footerBox {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2rem;
+}
+
+.box {
+    text-align: center;
+    justify-content: center;
+    padding-bottom: 1rem;
+}
+
+/*----- class contact ------*/
+.contact h3 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.5rem;
+    color: #5a5a5a;
+    margin-top: 10px;
+}
+.contact p:nth-child(1) {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+    color: #6a6a6a;
+}
+.contact p:nth-child(3) {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    color: #6a6a6a;
+    margin-bottom: 20px;
+}
+
+/*----- class medsos -----*/
+.medsos {
+    padding: 0;
+}
+
+.medsos img {
+    margin: 10px;
+    width: 3vw;
+    height: auto;
+    vertical-align: middle;
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.medsos img:hover {
+    transition: 0.3s;
+    filter: brightness(1.2);
+    transform: scale(1.1);
+}
+
+/*------ class last -------*/
+.last p {
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+.last p:nth-child(1) {
+    color: #6a6a6a;
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+.last p:nth-child(2) {
+    color: #6a6a6a;
+    font-size: 0.7rem;
+    margin: 10px 0;
+}
+
+.last p:nth-child(3) {
+    color: #999;
+    font-size: 0.8rem;
+}
+
+/*-------------image kanan kiri--------------*/
+.box.images {
+    margin-top: -5rem; /* Pastikan ini tidak bikin overlap, kalau perlu dihapus */
+}
+.images img {
+    margin-top: 0;
+    width: auto;
+    height: 50vh;
+}
+
+/*--------- SISTEM RESPONSIVE ---------*/
+@media screen and (max-width: 2440px) {
+    .menu li a:hover,
+    .menu li a.active {
+        background-color: #A3B9D2;
+        color: #003366;
+        transition: 0.3s;
+    }
+    .btnBar {
+        display: none;
+    }
+}
+
+/*----------------------------------------------------------*/
+@media screen and (max-width: 1440px) {
+    .name {
+        margin-right: -5rem;
+        padding: 0 0 0 11%;
+    }
+    .menu li:last-child {
+        padding-right: 10rem;
+    }
+    .home {
+        width: 80%;
+    }
+    .container-about {
+        width: 80%;
+    }
+    .about {
+        width: 22rem;
+        padding: 15px;
+    }
+    .experience {
+        width: 100%;
+        margin: 2rem;
+    }
+    .experience-container {
+        width: 90vw;
+        margin: 2rem;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .name {
+        margin-right: 2rem;
+        padding: 0 0 0 6%;
+    }
+    .menu li:last-child {
+        padding-right: 4rem;
+    }
+    .home {
+        width: 90%;
+    }
+    .container-about {
+        width: 90%;
+    }
+    .about {
+        width: 18rem;
+        padding: 10px;
+    }
+    .right-column ul li {
+        margin: 0 0 0 10px;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .name {
+        padding: 0 0 0 5%;
+    }
+    .menu {
+        display: none;
+    }
+    .btnBar {
+        display: inline;
+    }
+    .menuSidebar:focus + #sidebar {
+        display: inline;
+    }
+
+    .home {
+        margin-top: 0 auto;
+        width: 90%;
+    }
+    .home img {
+        height: 15rem;
+        width: 15rem;
+    }
+    .homeBox p:nth-child(1) {
+        margin-top: 1rem;
+        font-size: 1.8rem;
+    }
+    .homeBox p:nth-child(2) {
+        margin-top: -2rem;
+        font-size: 1.5rem;
+    }
+    .homeBox a {
+        font-size: 0.8rem;
+    }
+
+    .container-about {
+        width: 100%;
+        display: flex;  /* PERBAIKAN: 'relative' bukan valid display property */
+        flex-direction: column;
+        align-items: center;
+    }
+    .about {
+        width: 90%;
+        height: auto;
+        text-align: center;
+    }
+    .right-column {
+        width: 90%;
+    }
+    .skills, .leanguage, .software, .certificate, .education {
+        margin: 5px;
+    }
+    .skills.special-margin {
+        margin-top: -15rem;
+    }
+
+    .experience {
+        width: 100%;
+        display: flex; /* Supaya flex-direction: column berfungsi */
+        flex-direction: column;
+        align-items: center;
+    }
+    .experience-container {
+        grid-template-columns: none;
+        width: 90vw;
+    }
+
+    .projec {
+        width: 100%;
+        color: #4A4A4A;
+        font-family: 'poppins', sans-serif;
+    }
+
+    .projects {
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: none;
+        grid-gap: 2rem;
+    }
+    .project img {
+        height: 100%;
+        max-height: 50vh;
+    }
+    .project h3 {
+        font-size: 1rem;
+        align-items: center;
+    }
+    .project a {
+        margin: 0rem;
+        display: block;
+    }
+    .project a:nth-child(3) {
+        margin: 0 0 0 1rem;
+        font-size: 0.8rem;
+        width: 90%;
+    }
+    .project a:last-child {
+        margin-left: 1rem;
+        font-size: 0.8rem;
+    }
+
+    .footer {
+        margin-top: 1rem;
+    }
+    .footer h1 {
+        font-size: 2rem;
+        margin-top: 0;
+        padding-top: 3rem;
+    }
+    .footerBox {
+        width: 100%;
+        margin: auto;
+    }
+    .contact h3 {
+        font-size: 1.2rem;
+        margin-top: 0;
+    }
+    .contact p:nth-child(1) {
+        font-size: 1rem;
+    }
+    .contact p:nth-child(3) {
+        font-size: 1rem;
+        margin-bottom: 1px;
+    }
+    .images img {
+        height: 25vh;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .contactBar {
+        height: 8%;
+        top: 83%;
+    }
+    .contactBar a {
+        font-size: 100%;
+        padding: 5%;
+    }
+
+    .homeBox a {
+        width: 100%;
+        height: auto;
+        padding: 0.8rem;
+        margin: 1rem;
+        font-size: 0.8rem;
+    }
+    .skills.special-margin {
+        margin-top: 0;
+    }
+    .right-column ul {
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+        list-style: none;
+        width: 100%;
+    }
+    .right-column ul li {
+        display: flex;
+        justify-content: center;
+        width: auto;
+        margin: 5px;
+        padding: 10px;
+    }
+    .educationBox ul li {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .educationBox ul li p {
+        margin-top: 5px;
+        display: block;
+    }
+
+    .experience {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        height: auto;
+        clear: both;
+    }
+    .experience-container {
+        grid-template-columns: none;
+        width: 100%;
+        margin: 0;
+    }
+
+    .footer h1 {
+        font-size: 2rem;
+        margin: 0;
+        padding: 0rem;
+    }
+    .images img {
+        display: none;
+    }
+    .footerBox {
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        grid-template-columns: none;
+        grid-gap: none;
+    }
+    .medsos img {
+        width: 2rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .name {
+        padding: 0 0 0 5%;
+        font-size: 2rem;
+    }
+    .contactBar {
+        height: 6%;
+        top: 85%;
+    }
+}
