@@ -15,13 +15,13 @@ graphql
 Salin
 Edit
 portfolio/
-├── index.html           # Halaman utama portfolio
-├── css/
-│   └── style.css        # File CSS utama untuk styling portfolio
-├── js/
-│   └── main.js          # File JavaScript untuk interaksi, loader, lazy loading, dsb.
-├── images/              # Folder gambar (misal: favicon, gambar profil, project images, dsb.)
-└── README.md            # File ini
+*├── index.html           # Halaman utama portfolio
+*├── css/
+*│   └── style.css        # File CSS utama untuk styling portfolio
+*├── js/
+*│   └── main.js          # File JavaScript untuk interaksi, loader, lazy loading, dsb.
+*├── images/              # Folder gambar (misal: favicon, gambar profil, project images, dsb.)
+*└── README.md            # File ini
 
 # Cara Menjalankan
 Clone atau Download Repository
@@ -51,4 +51,4 @@ Visitor Counter: Jumlah pengunjung ditampilkan di elemen dengan ID visitorCount 
 Project ini bersifat open-source dan dapat digunakan serta dikembangkan sesuai kebutuhan.
 
 # Author
-# Dhany Catur Prasetya #
+ Dhany Catur Prasetya 
