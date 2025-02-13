@@ -15,7 +15,7 @@ graphql
 Salin
 Edit
 portfolio/
-```├── index.html           # Halaman utama portfolio```
+```├── index.html```# Halaman utama portfolio```
 ```├── css/```
 ```│   └── style.css        # File CSS utama untuk styling portfolio```
 ```├── js/```
